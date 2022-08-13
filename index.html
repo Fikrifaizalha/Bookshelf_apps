@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf Apps</title>
+    <!-- /*=============== CSS ===============*/ -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- /*=============== UNICON ===============*/ -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<!-- /*=============== HEADER ===============*/ -->
+<header>
+
+    <div class="header-title">
+        <h1><i class="uil uil-book-open"></i>Bookshelf Apps</h1>
+    </div>
+
+</header>
+
+
+<body>
+
+    <!-- /*=============== MAIN ===============*/ -->
+
+    <!-- /*=============== SECTION 1 ===============*/ -->
+    <main>
+
+        <div id="content">
+            <article class="content__1">
+                <section class="input__section" id="inputSection">
+                    <h2 class="h2__inputSection">New Book</h2>
+                    <form id="inputBook" class="form__content">
+                        <div class="input" id="sectionTitle">
+                            <small class="error-display" id="errorTitle">*required</small>
+                            <br>
+                            <input id="inputBookTitle" type="text" class="form__input" placeholder="type to title">
+                            <label for="inputBookTitle" class="form__label">TITLE:</label>
+                            <div class="form__shadow"></div>
+                        </div>
+                        <div class="input" id="sectionAuthor">
+                            <small class="error-display" id="errorAuthor">*required</small><br>
+                            <input id="inputBookAuthor" type="text" class="form__input" placeholder="type to author">
+                            <label for="inputBookAuthor" class="form__label">AUTHOR:</label>
+                            <div class="form__shadow"></div>
+                        </div>
+                        <div class="input" id="sectionYear">
+                            <small class="error-display" id="errorYear">*required</small><br>
+                            <input id="inputBookYear" type="number" class="form__input" placeholder="type to year">
+                            <label for="inputBookYear" class="form__label">YEAR:</label>
+                            <div class="form__shadow"></div>
+                        </div>
+                        <div class="input_inline">
+                            <label for="inputBookIsComplete">Read Book</label>
+                            <input id="inputBookIsComplete" type="checkbox" />
+                        </div>
+                        <div class="book__button">
+                            <button id="bookSubmit" type="button" class="form__submit">
+                                <span>add book</span></button>
+                        </div>
+                    </form>
+                </section>
+            </article>
+        </div>
+
+        <!-- /*=============== SECTION 2 ===============*/ -->
+
+        <article class="content__2">
+            <section class="search_section book_shelf" id="searchSection">
+                <div class="search__section">
+                    <h2 class="h2__inputSection">Search Book</h2>
+                    <form id="searchBook" class="form__search">
+                        <label for="searchBookTitle">title</label>
+                        <input id="searchBookTitle" type="text" placeholder="type to search">
+                        <button id="searchSubmit" type="submit">search</button>
+                    </form>
+                </div>
+                <div id="searchResult" class="book_list" style="width: 100%"></div>
+            </section>
+        </article>
+
+        <!-- /*=============== SECTION 3 ===============*/ -->
+
+        <section class="book_shelf" id="bookShelfUncompleted">
+            <h2 id="uncompletedH2">Unread Book</h2>
+
+            <div id="incompleteBookshelfList" class="book_list"></div>
+        </section>
+
+        <section class="book_shelf" id="bookShelfCompleted">
+            <h2 id="completedH2">Read Book</h2>
+
+            <div id="completeBookshelfList" class="book_list"></div>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- /*=============== JS ===============*/ -->
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

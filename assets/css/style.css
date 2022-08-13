@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors ==========*/
+    /* Color mode HSL & RGB */
+    --first-color: hsl(9, 100%, 64%);
+    --white-color: #fff;
+    --black-color: #000;
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: .900rem;
+    --tiny-font-size: .600rem;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 970px) {
+    :root {
+        --normal-font-size: 1rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--black-color);
+}
+
+/*=============== HEADER ===============*/
+.header-title {
+    font-size: 20px;
+    padding: 30px;
+    background: var(--first-color);
+    text-align: center;
+    color: var(--white-color);
+}
+
+/*=============== MAIN ===============*/
+
+main {
+    height: 100%;
+    display: grid;
+    grid-column: auto;
+    margin: 2rem;
+    place-items: center;
+}
+
+/*=============== SECTION 1 ===============*/
+
+.content__1 {
+    display: grid;
+    grid-column: auto;
+    margin: 2rem;
+}
+
+.form__content {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.form__input,
+.form__label,
+#bookSubmit {
+    border: 0;
+    outline: none;
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+}
+
+.h2__inputSection {
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white-color);
+}
+
+.input {
+    width: 312px;
+    height: 59px;
+    position: relative;
+}
+
+.input_inline {
+    padding-top: 10px;
+}
+
+.input_inline label {
+    font-size: 13px;
+}
+
+
+.form__shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--first-color);
+}
+
+.form__input {
+    position: absolute;
+    border: 2.5px solid var(--black-color);
+    background-color: var(--white-color);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding: 18px;
+    transition: transform .3s;
+    font-size: 13px;
+}
+
+.form__input::placeholder {
+    transition: opacity .5s;
+}
+
+.form__label {
+    z-index: 100;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: var(--tiny-font-size);
+    transition: .2s;
+    pointer-events: none;
+    opacity: 0;
+    color: var(--white-color);
+    letter-spacing: 5px;
+}
+
+.book__button {
+    justify-self: flex-start;
+    background-color: var(--white-color);
+}
+
+#bookSubmit {
+    padding: 10px 20px;
+    background-color: var(--first-color);
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+span {
+    color: var(--white-color);
+    font-size: 13px;
+}
+
+.form__submit:hover {
+    transform: translate(-6px, -6px);
+}
+
+/* Opaque placeholder */
+.form__input:focus::placeholder {
+    opacity: 0;
+    transition: .3s;
+}
+
+/* Move input and sticky input up */
+.form__input:focus,
+.form__input:not(:placeholder-shown).form__input:not(:focus) {
+    transform: translate(-8px, -8px);
+    padding: 28px 18px 18px;
+    animation: input-animation .5s;
+}
+
+/* Move label and sticky label up */
+.form__input:focus+.form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus)+.form__label {
+    opacity: 1;
+    top: 2px;
+    left: 12px;
+    transition: .3s;
+}
+
+/* Input bounce animation */
+@keyframes input-animation {
+    0% {
+        transform: translate(0);
+    }
+
+    40% {
+        transform: translate(-9px, -9px);
+    }
+
+    60% {
+        transform: translate(-7px, -7px);
+    }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+
+    .form__content,
+    .input {
+        width: 100%;
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 968px) {
+    .form__content {
+        zoom: 1.1;
+    }
+}
+
+
+
+/*=============== SECTION 2 ===============*/
+
+.form__search {
+    background: var(--first-color);
+    width: 320px;
+    height: 56px;
+    display: flex;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 13px;
+
+}
+
+.form__search label {
+    font-size: var(--normal-font-size);
+    padding: 14px 5px;
+    background: none;
+    color: var(--white-color);
+    display: flex;
+
+}
+
+.form__search input {
+    flex: 1;
+    outline: none;
+    padding-left: 10px;
+}
+
+.form__search button {
+    background: var(--first-color);
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    color: var(--white-color);
+    cursor: pointer;
+
+}
+
+.input_inline {
+    color: var(--white-color);
+    font-size: var(--normal-font-size);
+    display: flex;
+    margin: 20 0px;
+}
+
+.input_inline label {
+    padding-right: 20px;
+}
+
+/*=============== SECTION 3 ===============*/
+
+.content__3 {
+    font-size: var(--tiny-font-size);
+}
+
+.book_shelf {
+    margin: 16px 0 0 0;
+    border: 1px solid black;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.book_shelf>h2 {
+    color: var(--white-color);
+}
+
+.book_shelf>.book_list {
+    padding: 16px;
+}
+
+.book_shelf>.book_list>.book_item {
+    padding: 8px 16px 16px 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.book_shelf>.book_list>.book_item>h3,
+p {
+    margin: 8px 0;
+}
+
+.book_shelf>.book_list>.book_item>.action>button {
+    border: 0;
+    padding: 5px;
+    margin: 0 5px 0 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book_shelf>.book_list>.book_item>.action>.green {
+    background-color: #2ecc71;
+    color: var(--white-color);
+}
+
+.book_shelf>.book_list>.book_item>.action>.yellow {
+    background-color: #f1c40f;
+    color: var(--white-color);
+}
+
+.book_shelf>.book_list>.book_item>.action>.red {
+    background-color: #e74c3c;
+    color: var(--white-color);
+}
+
+.error {
+    border: 2px solid red;
+}
+
+small {
+    float: right;
+    color: red;
+}
+
+p {
+    color: var(--white-color);
+}
+
+h3 {
+    color: var(--white-color);
+}
+
+.error-display {
+    display: none;
+}
